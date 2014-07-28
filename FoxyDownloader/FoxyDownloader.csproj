@@ -53,6 +53,7 @@
     <Compile Include="Controls\FoxyListView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Other\Helper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FrmDownload.resx">

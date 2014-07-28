@@ -11,6 +11,9 @@ namespace FoxyDownloader.Forms
         {
             InitializeComponent();
 
+            // Enable Double Buffer to prevent flickering
+            Other.ListViewHelper.EnableDoubleBuffer(listviewDownloads);
+
             // Set the sizes of the columns.
             clmName.Width = listviewDownloads.Width / 3 + 150;
             clmProgress.Width = listviewDownloads.Width / 3 - 75;
