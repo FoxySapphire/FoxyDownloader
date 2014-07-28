@@ -32,6 +32,8 @@ namespace FoxyDownloader.Forms
         {
             InitializeComponent();
 
+            Text = "Downloader - " + Application.ProductVersion;
+
             // Set the sizes of the columns.
             clmName.Width = listviewDownloads.Width / 4 + 125;
             clmProgress.Width = listviewDownloads.Width / 4 - 50;
@@ -163,13 +165,13 @@ namespace FoxyDownloader.Forms
                     _downloadUrls.Enqueue(url);
                     // The progressbar we're going to add
                     ProgressBar pb = new ProgressBar();
-                    // The file name (yay, dynamic now!)
+                    // The file name
                     listviewDownloads.Items.Add(fileName);
                     // An empty place for the progressbar
                     listviewDownloads.Items[listviewDownloads.Items.Count - 1].SubItems.Add("");
-                    // Add the size (need to make this dynamic somehow)
+                    // Add the size
                     listviewDownloads.Items[listviewDownloads.Items.Count - 1].SubItems.Add(size);
-                    // Change the icon to the blue stripes (waiting)
+                    // Change the icon to the blue stripes (waiting) or red cross (error)
                     if (_error404) listviewDownloads.Items[listviewDownloads.Items.Count - 1].ImageIndex = 3;
                     else listviewDownloads.Items[listviewDownloads.Items.Count - 1].ImageIndex = 2;
                     // Add the status code
@@ -246,6 +248,7 @@ namespace FoxyDownloader.Forms
             {
                 Console.WriteLine(exception);
             }
+
             // This will update our progressbars
             ((ProgressBar)listviewDownloads.GetEmbeddedControl(1, _count)).Value = e.ProgressPercentage;
         }

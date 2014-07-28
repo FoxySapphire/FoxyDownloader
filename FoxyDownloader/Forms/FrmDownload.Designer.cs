@@ -144,7 +144,7 @@
             this.MinimumSize = new System.Drawing.Size(625, 400);
             this.Name = "FrmDownload";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Downloading...";
+            this.Text = "Downloader";
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
