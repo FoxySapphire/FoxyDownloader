@@ -39,13 +39,14 @@
             this.clmName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmProgress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(441, 15);
+            this.btnCancel.Location = new System.Drawing.Point(536, 15);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
@@ -56,7 +57,7 @@
             // btnStart
             // 
             this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStart.Location = new System.Drawing.Point(522, 15);
+            this.btnStart.Location = new System.Drawing.Point(617, 15);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
             this.btnStart.TabIndex = 4;
@@ -92,7 +93,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 311);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(609, 50);
+            this.panel1.Size = new System.Drawing.Size(704, 50);
             this.panel1.TabIndex = 7;
             // 
             // listviewDownloads
@@ -100,13 +101,15 @@
             this.listviewDownloads.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.clmName,
             this.clmProgress,
-            this.clmSize});
+            this.clmSize,
+            this.clmStatus});
             this.listviewDownloads.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listviewDownloads.FullRowSelect = true;
             this.listviewDownloads.GridLines = true;
             this.listviewDownloads.Location = new System.Drawing.Point(0, 0);
             this.listviewDownloads.Name = "listviewDownloads";
-            this.listviewDownloads.Size = new System.Drawing.Size(609, 361);
+            this.listviewDownloads.Size = new System.Drawing.Size(704, 311);
+            this.listviewDownloads.SmallImageList = this.imagelistDownload;
             this.listviewDownloads.TabIndex = 6;
             this.listviewDownloads.UseCompatibleStateImageBehavior = false;
             this.listviewDownloads.View = System.Windows.Forms.View.Details;
@@ -114,7 +117,7 @@
             // clmName
             // 
             this.clmName.Text = "Name";
-            this.clmName.Width = 443;
+            this.clmName.Width = 300;
             // 
             // clmProgress
             // 
@@ -126,15 +129,20 @@
             this.clmSize.Text = "Size";
             this.clmSize.Width = 99;
             // 
-            // Form1
+            // clmStatus
+            // 
+            this.clmStatus.Text = "Status";
+            this.clmStatus.Width = 100;
+            // 
+            // FrmDownload
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 361);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(704, 361);
             this.Controls.Add(this.listviewDownloads);
+            this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(625, 400);
-            this.Name = "Form1";
+            this.Name = "FrmDownload";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Downloading...";
             this.Resize += new System.EventHandler(this.Form1_Resize);
@@ -154,6 +162,7 @@
         private System.Windows.Forms.ColumnHeader clmName;
         private System.Windows.Forms.ColumnHeader clmProgress;
         private System.Windows.Forms.ColumnHeader clmSize;
+        private System.Windows.Forms.ColumnHeader clmStatus;
 
     }
 }

@@ -50,7 +50,7 @@
     <Compile Include="Forms\FrmDownload.Designer.cs">
       <DependentUpon>FrmDownload.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\FoxyListView.cs">
+    <Compile Include="Controls\ListView\FoxyListView.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Other\Helper.cs" />
@@ -58,6 +58,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FrmDownload.resx">
       <DependentUpon>FrmDownload.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

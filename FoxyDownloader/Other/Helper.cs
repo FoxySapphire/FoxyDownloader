@@ -15,7 +15,7 @@ namespace FoxyDownloader.Other
         /// </summary>
         /// <param name="byteCount"></param>
         /// <returns></returns>
-        private static String BytesToString(long byteCount)
+        public static string BytesToString(long byteCount)
         {
             string[] suf = { " B", " KB", " MB", " GB", " TB", " PB", " EB" }; //Longs run out around EB
             if (byteCount == 0)
@@ -33,11 +33,21 @@ namespace FoxyDownloader.Other
         /// <param name="value"></param>
         /// <param name="places"></param>
         /// <returns></returns>
-        private static double Truncate(double value, int places)
+        public static double Truncate(double value, int places)
         {
             // not sure if you care to handle negative numbers...       
             var f = Math.Pow(10, places);
             return Math.Truncate(value * f) / f;
+        }
+
+        public static class ModifyProgressBarColor
+        {
+            [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
+            static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr w, IntPtr l);
+            public static void SetState(ProgressBar pBar, int state)
+            {
+                SendMessage(pBar.Handle, 1040, (IntPtr)state, IntPtr.Zero);
+            }
         }
     }
     public enum ListViewExtendedStyles
